@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "",
+  publicPath: "https://inkychew.github.io/Hotel_Vuejs/",
   css: {
     loaderOptions: {
       // pass options to sass-loader
