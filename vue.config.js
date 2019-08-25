@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: "",
   css: {
     loaderOptions: {
       // pass options to sass-loader
