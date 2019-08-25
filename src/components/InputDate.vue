@@ -7,6 +7,8 @@
         placeholder='Check in date'
         :disabled-dates='getDisableDate'
         :format='DateFormat'
+        :highlighted='highlighted'
+        @input='onInputCheckIn'
       )
       //- calendar-button-icon='far fa-calendar-alt'
           clear-button-icon=':class="fa fa-times"'
@@ -15,10 +17,12 @@
     .col
       datepicker(
         bootstrap-styling=true
+        includeDisabled=true
         v-model='checkOut'
         placeholder='Check out date'
         :disabled-dates='getDisableDate'
         :format='DateFormat'
+        @input='onInputCheckOut'
       )
       //- input.form-control.cursor(type='text', placeholder='Check out date')
       //- i.far.fa-calendar-alt.cursor
@@ -38,6 +42,17 @@ export default {
       checkOut: ''
     }
   },
+  watch: {
+    checkOut: {
+      handler (val) {
+        if (this.checkOut < this.checkIn) {
+          console.log(typeof(this.checkIn))
+          alert('check out date can not earlier than check in date!')
+        }
+      }
+    },
+    deep: true
+  },
   computed: {
     getDisableDate () {
       const today = new Date()
@@ -45,19 +60,37 @@ export default {
       const month = today.getMonth()
       const date = today.getDate()
       return { to: new Date(year, month, date) }
+    },
+    highlighted () {
+      return { from: this.checkOut }
     }
   },
   methods: {
     DateFormat (date) {
       const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thrus', 'Fri', 'Sat']
-      const month = date.getMonth()
+      const month = date.getMonth() + 1
       const D = date.getDate()
       const day = days[date.getDay()]
       return month + '/' + D + ', ' + day
+    },
+    onInputCheckIn (event) {
+      const year = parseInt(event.getFullYear())
+      const month = parseInt(event.getMonth() + 1)
+      const date = parseInt(event.getDate())
+      const day = parseInt(event.getDay())
+      const checkIn = [year, month, date, day]
+      this.$emit('inputCheckIn', checkIn)
+    },
+    onInputCheckOut (event) {
+      const year = parseInt(event.getFullYear())
+      const month = parseInt(event.getMonth() + 1)
+      const date = parseInt(event.getDate())
+      const day = parseInt(event.getDay())
+      const checkOut = [year, month, date, day]
+      this.$emit('inputCheckOut', checkOut)
     }
   },
   mounted () {
-    console.log(new Date().getMonth())
   }
 }
 </script>

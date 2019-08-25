@@ -1,5 +1,6 @@
 <template lang="pug">
   #app
+    AllModals
     .container-fulid
       header
         nav.navbar.navbar-expand-lg
@@ -23,34 +24,47 @@
       router-view
       //-
       footer
-        .row.d-flex.justify-content-between
-          .left.col-9.d-flex.flex-row
-            .col.d-flex.align-items-center
-              label.mb-0 Follow us on
-              i.fab.fa-facebook-square
-              i.fab.fa-twitter-square
-            .col-8.d-flex.flex-row.align-items-center
-              label.mb-0 Servise number
-              label.mb-0.tel +886-2-2345-6789
-          .right
-            .col.d-flex.align-items-center
-              label.mb-0 @2019 Nature Space
+        .row.d-flex.justify-content-between.mx-0
+          .col.d-flex.align-items-center
+            label.mb-0 Follow us on
+            i.fab.fa-facebook-square
+            i.fab.fa-twitter-square
+          .col-lg-7.col-md-6.col-sm-12.d-flex.flex-row.align-items-center
+            label.mb-0 Servise number
+            label.mb-0.tel +886-2-2345-6789
+          .col.d-flex.align-items-center
+            label.mb-0 @2019 Nature Space
 </template>
 
 <script>
+import AllModals from '@/components/AllModals'
+
 export default {
   name: 'App',
+  components: {
+    AllModals
+  },
+  data () {
+    return {
+      nowId: '#About'
+    }
+  },
   watch: {
     $route: {
       handler (val) {
         this.nowId = val.hash
       },
       deep: true
-    }
-  },
-  data () {
-    return {
-      nowId: '#About'
+    },
+    nowId: {
+      handler(val) {
+        if (val === '') {
+          return;
+        } else {
+          console.log(val)
+          this.$scroll(val)
+        }
+      }
     }
   },
   methods: {
@@ -59,7 +73,6 @@ export default {
     }
   },
   mounted () {
-    console.log(document.querySelectorAll("a[href^='/#']"));
   }
 }
 </script>

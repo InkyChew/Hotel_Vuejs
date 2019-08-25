@@ -3,9 +3,9 @@
     .row.mx-0
       Banner
     #About.row.mx-0.about.d-flex.align-items-center
-      .col
-        img(src='@/assets/image/about.jpg' width='500px' height='600px')
-      .col
+      .col-lg-6.col-md-12
+        img(src='@/assets/image/about.jpg' width='100%' height='600px')
+      .col-lg-6.col-md-12
         h2 About us
         p
          | A wonderful vacation on dream.
@@ -15,13 +15,13 @@
          | the mountains and the ocean in front of you. You can totally relax yourself with the bright and tidy room,
          | the astonishing scene, and our sweet service. Faraway from the noist city right now.
     #Rooms.row.mx-0.room.d-flex.align-items-center
-      .col-md-3.col-sm-12
+      .col-lg-3.col-md-12.col-sm-12
         h2 Rooms
         p Nova Sky comprises 67 suites. Each one artfully combines the ultimate in luxury, comfort and sophistication. Every living space, gives a new definition to opulence and splendour, with contemporary finishes and premium facilities.
-      .col-md-9.col-sm-12
+      .col-lg-9.col-md-12.col-sm-12
         .row
           template(v-for='room in rooms')
-            .col-md-4.col-sm-12.roomNav.px-0
+            .col-lg-4.col-md-6.col-sm-12.roomNav.px-0.mx-auto
               .card.text-white.h-100
                 img.card-img.h-100(:src='room.imageUrl', alt='Card image')
                 a.card-img-overlay.d-flex.align-items-center(
@@ -50,7 +50,7 @@
           .form-group
             textarea.form-control(rows='4' cols='50' placeholder='Your Message')
           .d-flex.justify-content-end
-            button.btn.btn-primary(type='submit') Send
+            button.btn.btn-primary Send
 </template>
 
 <script>
@@ -139,6 +139,8 @@ p
   padding: 50px
   .form-control
     border-color: $bgGrey
+  input::placeholder
+    color: $grey
   textarea
     width: 100%
     height: 150px
@@ -147,4 +149,6 @@ p
     border-radius: 4px
     font-size: 16px
     resize: none
+    &::placeholder
+      color: $grey
 </style>

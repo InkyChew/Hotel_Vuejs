@@ -13,7 +13,23 @@ $text: #B2B2B2
     background-color: $secCoffee
     border: none
   &:active
-    background-color: red
-    border: none
+    background-color: $secCoffee !important
+    border: none !important
 .cursor
   cursor: pointer
+
+.form-control:focus
+  border-color: $coffee !important
+  box-shadow: none
+.btn.focus.btn:focus
+  box-shadow: none
+.btn-primary.focus, .btn-primary:focus
+  box-shadow: none
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus
+  box-shadow: none
+
+// .modal-open
+//   overflow: hidden
+// .fade.show
+//   opacity: 1
+//   display: block

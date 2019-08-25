@@ -16,5 +16,14 @@ export default {
       path,
       auth: true
     })
+  },
+  postRoom (id, data) {
+    const path = `/room/${id}`
+    return httpServie({
+      method: 'post',
+      path,
+      data,
+      auth: true
+    })
   }
 }
