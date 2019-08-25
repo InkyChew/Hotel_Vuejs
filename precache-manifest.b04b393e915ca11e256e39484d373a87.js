@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "https://inkychew.github.io/Hotel_Vuejs/img/b2.70a0c1f9.jpg"
   },
   {
-    "revision": "d17aa1e2d3859a24c6ac",
+    "revision": "45755db2e077f6a5979e",
     "url": "https://inkychew.github.io/Hotel_Vuejs/css/app.729c8b02.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "https://inkychew.github.io/Hotel_Vuejs/js/about.5a566621.js"
   },
   {
-    "revision": "d17aa1e2d3859a24c6ac",
-    "url": "https://inkychew.github.io/Hotel_Vuejs/js/app.5a2718d6.js"
+    "revision": "45755db2e077f6a5979e",
+    "url": "https://inkychew.github.io/Hotel_Vuejs/js/app.5826ed1f.js"
   },
   {
     "revision": "304db1bb471129323cbf292eaba02741",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "https://inkychew.github.io/Hotel_Vuejs/img/b1.127d6fb3.jpg"
   },
   {
-    "revision": "955605f08943643e27fb2ece1f3c0160",
+    "revision": "3062987e564979030c2838835164d313",
     "url": "https://inkychew.github.io/Hotel_Vuejs/index.html"
   },
   {

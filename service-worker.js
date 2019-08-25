@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://inkychew.github.io/Hotel_Vuejs/precache-manifest.37416c9b9df9b61d97414245999e3193.js"
+  "https://inkychew.github.io/Hotel_Vuejs/precache-manifest.b04b393e915ca11e256e39484d373a87.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "hotel"});
