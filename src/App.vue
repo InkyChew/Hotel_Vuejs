@@ -15,11 +15,11 @@
             .col.right-align
               ul.navbar-nav.mt-2.mt-lg-0
                 li.nav-item
-                  a.nav-link(href='/#About' :class="{ active : nowId === '#About' }" @click='goLink') About us
+                  a.nav-link(href='#About' :class="{ active : nowId === '#About' }" @click='goLink') About us
                 li.nav-item
-                  a.nav-link(href='/#Rooms' :class="{ active : nowId === '#Rooms' }" @click='goLink') Rooms
+                  a.nav-link(href='#Rooms' :class="{ active : nowId === '#Rooms' }" @click='goLink') Rooms
                 li.nav-item
-                  a.nav-link(href='/#Contact' :class="{ active : nowId === '#Contact' }" @click='goLink') Contact us
+                  a.nav-link(href='#Contact' :class="{ active : nowId === '#Contact' }" @click='goLink') Contact us
       //-
       router-view
       //-
